@@ -20,6 +20,7 @@ import { FaPhone } from "react-icons/fa6";
 import About from "./about event/about";
 import Ticket from "../Tickets/tickets";
 import Speaker from "./speakersection/speaker";
+import Loader from "react-js-loader";
 
 
 
@@ -33,7 +34,7 @@ import Speaker from "./speakersection/speaker";
 const CountdownTimer = ({ targetDate }) => {
     const [timeRemaining, setTimeRemaining] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
     const [openNav, setOpenNav] = useState(false);
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
 
 
 
@@ -84,7 +85,7 @@ const CountdownTimer = ({ targetDate }) => {
 
 const Home = () => {
     const [icon, setIcon] = useState();
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
     const [events, setEvents] = useState([]);
     const Navigate = useNavigate();
 
@@ -97,8 +98,21 @@ const Home = () => {
             const response = await axios.get(
                 'https://dev-api.konfhub.com/event/public/konfhub-frontend-evaluation-task'
             );
-            setEvents(response.data);
-            setIcon(response.data.poster_thumbnail)
+
+            if (response.data) {
+                console.log("erorrrrrrrrr iffffffff");
+                setEvents(response.data);
+                setIcon(response.data.poster_thumbnail)
+                setLoading(false)
+
+                
+            } else {
+                
+                setLoading(true)
+                
+            }
+         
+           
 
             console.log("icom", icon);
 
@@ -150,7 +164,12 @@ const Home = () => {
 
     return (
         <div >
-            <Headingfile />
+
+        {loading ?   <div className="loading-container">
+          <div className="spinner"></div>
+          <div className="loading-text">Loading...</div>
+        </div> : <>
+                <Headingfile />
 
             <div style={{ padding: "30px 50px" }}>
                 <div className="row" style={{ marginTop: "20px" }}>
@@ -288,7 +307,8 @@ const Home = () => {
                     </div>
                 </div>
 
-            </div>
+            </div></> }
+        
         </div>
 
 

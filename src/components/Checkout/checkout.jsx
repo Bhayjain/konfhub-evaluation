@@ -73,7 +73,7 @@ const CategoryList = () => {
                     ticketDescription: 'This is a ticket description. This is a free ticket. This ticket is categorized.',
                     venueDetails: 'KonfHub Technologies, Nagavarapalya, C V Raman Nagar, Bengaluru, Karnataka, India',
                     ticketType: 'FREE',
-                    price: null  
+                    price: null
                 },
                 {
                     ticketName: "Paid Ticket in Category1",
@@ -133,6 +133,8 @@ const CategoryList = () => {
     const [userDetails, setUserdetails] = useState([])
     const [error, setError] = useState("")
     const navigate = useNavigate();
+    const [searchQuery, setSearchQuery] = useState('');
+
 
     const [formData, setFormData] = useState(
         detailsarray.map(() => ({
@@ -172,7 +174,7 @@ const CategoryList = () => {
             event.preventDefault();
             const submittedData = {
                 ...formData[index],
-                categoryType: detailsarray[index].type, 
+                categoryType: detailsarray[index].type,
             };
 
             console.log('Submitted data for index', index, submittedData);
@@ -229,8 +231,8 @@ const CategoryList = () => {
             hour: '2-digit',
             minute: '2-digit',
             second: '2-digit',
-            hour12: true, 
-            timeZoneName: 'short' 
+            hour12: true,
+            timeZoneName: 'short'
         };
 
         return dateObj.toLocaleString('en-IN', options);
@@ -308,7 +310,7 @@ const CategoryList = () => {
         const countFreeTickets = (detailsarray.filter(item => item.type.trim() === 'Free Ticket').length)
         const countPaidTicket = (detailsarray.filter(item => item.type.trim() === 'Paid Ticket').length)
         const countTicketWithCoupon = (detailsarray.filter(item => item.type.trim() === 'Ticket With Coupon').length)
-   
+
 
         setFeetickerprice(countFreeTickets)
         setPaidtickets(countPaidTicket)
@@ -344,20 +346,20 @@ const CategoryList = () => {
             const countFreeTickets = Number(detailsarray.filter(item => item.type.trim() === 'Free Ticket').length)
             const countPaidTicket = Number(detailsarray.filter(item => item.type.trim() === 'Paid Ticket').length)
             const countTicketWithCoupon = Number(detailsarray.filter(item => item.type.trim() === 'Ticket With Coupon').length)
-            
+
             setFeetickerprice(countFreeTickets)
             setPaidtickets(countPaidTicket)
             setTicketWithCoupon(countTicketWithCoupon)
 
             const priceofpaidtickets = Number(countPaidTicket) * 1000
             const priceofcouponticket = Number(countTicketWithCoupon) * 1000
-   
+
             setPriceofpaidtickets(priceofpaidtickets)
             setPriceofcouponticket(priceofcouponticket)
 
             const subtotal = Number(priceofpaidtickets) + Number(priceofcouponticket) + Number(donationvalue)
             setSubtotal(Number(subtotal))
-          
+
         } else {
             console.log("Category not found in detailsarray");
         }
@@ -394,9 +396,16 @@ const CategoryList = () => {
                 setButtonname("Register")
 
             }
-         
+
         }
     }
+
+
+
+    const filteredCategories = categories.filter(category =>
+        category.type.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
     return (
         <div style={{ padding: "30px 50px" }}>
             <div style={{ textAlign: "start" }}>
@@ -492,16 +501,14 @@ const CategoryList = () => {
                             </div>
 
                             <div className="col-lg-10 my_col_padd mycalendar" style={{ height: "613px", display: buttonshow == true ? "none" : "block" }}>
-
                                 <input
                                     type="text"
-                                    placeholder="Search users..."
-                                    value={""}
-                                    // onChange={handleInputChange}
-                                    className="search-input"
-
+                                    placeholder="Search by ticket type..."
+                                    value={searchQuery}
+                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                    style={{ marginBottom: '20px', padding: '10px', width: '100%' }}
                                 />
-                                {categories.map((category, index) => (
+                                {filteredCategories.map((category, index) => (
 
                                     <div className="card new_card" key={index}>
                                         <div>
@@ -653,7 +660,7 @@ const CategoryList = () => {
                                 </div>
 
                             </div>
-                    
+
                             <div className="col-lg-10 my_col_padd mycalendar" style={{ height: "613px", display: buttonshow === true && buttonname !== "Register" ? "block" : "none", }} >
 
                                 {detailsarray.map((categoryy, index) => (
@@ -813,7 +820,7 @@ const CategoryList = () => {
                                                     {/* Add more countries as needed */}
                                                 </select>
                                             </div>
-                                       
+
                                             <button type="submit" className="btn btn-primary">
                                                 Submit
                                             </button>
