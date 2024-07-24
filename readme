@@ -1,0 +1,20 @@
+Open Terminal:
+
+Launch your terminal or command prompt.
+Navigate to the Project Directory:
+
+Use the cd command to go to the directory containing your package.json file.
+Example command: cd /path/to/your/project.
+Install Dependencies:
+
+Run npm install to install all necessary packages specified in the package.json file.
+Start the Project:
+
+Execute the command npm start to run the application.
+This will trigger the script defined under the start property in the scripts section of your package.json.
+Access the Application:
+
+Once the application is running, open your web browser and navigate to http://localhost:3000 (or the port configured in your project) to access it.
+Troubleshooting:
+
+If issues arise, check the terminal output for error messages to ensure that all dependencies are correctly installed and configured.

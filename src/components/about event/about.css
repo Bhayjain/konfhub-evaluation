@@ -1,0 +1,47 @@
+.grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 44%;
+}
+  
+  
+  .image-item img {
+    width: 100%; 
+    height: auto; 
+    display: block; 
+  }
+  .video-section {
+    margin-top: 20px; 
+ }
+  
+  .video-section h2 {
+    margin-bottom: 10px; 
+  }
+  
+  .video-section iframe {
+    max-width: 100%; 
+    width: 60%;
+  }
+
+  .table-container {
+    display: flex;
+    /* justify-content: center; */
+    margin-top: 20px; /* Add space above the table */
+  }
+  
+  .styled-table {
+    border-collapse: collapse; /* Ensures borders are merged */
+    width: 100%; /* Adjust width as needed */
+  }
+  
+  .styled-table td {
+    border: 2px solid rgb(142, 142, 142); /* Orange border for each cell */
+    padding: 10px; /* Space inside each cell */
+    text-align: center; /* Center-align text */
+    border-radius: 10px;
+  }
+  
+  .styled-table tr {
+    background-color: #f9f9f9; /* Light background color for rows (optional) */
+  }

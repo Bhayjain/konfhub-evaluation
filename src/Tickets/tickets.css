@@ -1,0 +1,340 @@
+.my_arroww{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.font_sizr{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 11px;
+}
+
+.arrow_background{
+    padding: 15px;
+    background: rgb(246, 246, 252);
+    border: 2px solid rgb(202, 202, 202);
+    color: rgb(0, 0, 0);
+    transform: none;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for background color, transform, and box-shadow */
+
+}
+.arrow_background:hover {
+    background-color: black; /* Background color on hover */
+    transform: scale(1.2); /* Scale up the icon to create a popup effect */
+    color: white;
+    /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); Shadow effect on hover */
+
+  
+
+  }
+
+.checkout_head{
+    margin-left: 20px;
+}
+
+.class_col9{
+    border: 2px solid #cacaca;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        /* padding: 15px; */
+        height: fit-content;
+
+}
+
+.class_colnew9{
+    border-right: 2px solid #cacaca;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    /* border-radius: 10px; */
+    /* padding: 15px; */
+
+
+}
+.class_col99{
+    border: 2px solid #cacaca;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+        padding: 15px;
+        height: fit-content;
+        background-color: #f6f6fc;
+        ;
+
+}
+
+
+.new_card{
+    padding: 15px;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+
+
+}
+
+.my_col_padd{
+    padding: 30px !important;
+    padding-top: 10px !important;
+}
+
+.additional{
+    font-size: 13px;
+    font-family: Prompt;
+    color: rgb(102, 102, 102);
+}
+
+.add_btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.adding{
+    background-color: transparent !important;
+    color: black !important;
+}
+
+.adding:hover{
+    background-color: black !important;
+    color: white !important;
+
+}
+
+.counterui{
+    display: flex;
+    align-items: center;
+}
+
+.mycirclee{
+    font-size: 35px;
+    cursor: pointer;
+ 
+}
+
+/* .mycirclee:hover{
+    background-color: black !important;
+    color: white !important;
+    border-radius: 50%;
+    border-color: black !important;
+} */
+
+
+.countvalue{
+    font-size: 35px;
+    margin-left: 15px;
+    margin-right: 15px;
+
+}
+
+
+.donationn{
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid;
+    width: 45%;
+
+}
+
+.my_input{
+    width: 65% !important;
+}
+
+
+.my_cont{
+    background-color: white;
+    border-radius: 10px;
+
+    /* padding: 15px 30px */
+}
+.my_cont_sec{
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 11px;
+
+    
+    padding: 9px 9px
+}
+
+.checkout_desc{
+    font-size: 14px;
+    color: #572148;
+}
+
+.proceed_btn{
+        padding: 13px
+
+}
+.disabled {
+    opacity: 0.5;
+    pointer-events: none; /* This will prevent any interaction with the content */
+    cursor: not-allowed; /* Changes the cursor to a "not-allowed" icon */
+  }
+  
+  .disabled .btn {
+    pointer-events: none; /* Prevent interaction with the button as well */
+    cursor: not-allowed; /* Changes the cursor to a "not-allowed" icon */
+  }
+
+  .tickets_details{
+    word-break: break-word;
+    font-size: 14px;
+    color: #2125298c;
+  }
+
+  .tickets_details_main{
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+  }
+
+  .my_details{
+    width: 135px;
+    text-align: start;
+}
+
+.borderbg{
+    border: 1px solid;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.inter_nalborder{
+    background-color: black;
+    border-radius: 50%;
+}
+
+.background{
+    border: 2px solid;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    padding: 3px;
+    justify-content: center;
+}
+
+.int_bg{
+    background-color: black;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+.int_bggg{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); 
+
+
+}
+.int_bg.animate {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.class_colnew9{
+    padding-left: 30px !important;
+}
+
+.main_logo{
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.v1 {
+    border-left: 6px solid #e2e2e2;
+    height: 200px;
+    /* border-style: dashed; */
+    /* border-style: solid; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: beige; */
+    border-left-style: dashed;
+  }
+
+  .v2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .bewv1{
+    border-left: 6px solid #000000;
+    height: 200px;
+    /* border-style: dashed; */
+    /* border-style: solid; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: beige; */
+    border-left-style: dashed;
+
+  }
+
+  
+.mycalendar{
+    overflow-y: scroll;
+    overflow-x: scroll;
+  }
+
+  .mycalendar::-webkit-scrollbar-track
+  {
+    border-radius: 1px;
+    background-color: #ffffff !important;
+  }
+
+  .mycalendar::-webkit-scrollbar
+  {
+    width: 1px;
+    background-color: #ffffff !important;
+  }
+
+  .mycalendar::-webkit-scrollbar-thumb
+  {
+    border-radius: 1px;
+    background-color:#ffffff !important;
+  }
+  
+
+  .search-input{
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #a2a2a2;
+    border-radius: 5px;
+}
+  
+
+.form-group{
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.my_check_accordion{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
